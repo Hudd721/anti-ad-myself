@@ -1,3 +1,5 @@
+自用的adguardhome规则，主要用于限制视频等平台的cdn上传及电视盒子的上传，同时对日常使用过程中无法打开的网页加入白名单以及需要拦截的网页加入黑名单
+
 ||gkybz252.com
 ||d3vvyp77jrl6x3.cloudfront.net
 @@||skylinewebcams.com^
