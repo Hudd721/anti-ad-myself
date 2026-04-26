@@ -23,7 +23,7 @@
 @@||126.net^
 
 # ====================== OPPO / HeyTap 精准刚需放行（修复下载更新） ======================
-# 只放行必要的域名，避免全局放开
+! ---------- 只放行必要的域名，避免全局放开----------
 @@||account.heytapmobi.com^
 @@||sso.heytapmobi.com^
 @@||passport.heytapmobi.com^
@@ -41,8 +41,7 @@
 @@||oppo.cn^
 @@||oppomobile.com^
 @@||heytap.com^
-
-! 强制拦截 HeyTap 追踪/广告/统计
+! ---------- 强制拦截 HeyTap 追踪/广告/统计 ----------
 ||track.heytapmobi.com^
 ||stat.heytapmobi.com^
 ||log.heytapmobi.com^
@@ -50,7 +49,7 @@
 ||data.heytapmobi.com^
 ||report.heytapmobi.com^
 
-# ---- 电视盒子类的拦截与放行 ----
+# ====================== 电视盒子类的拦截与放行 ======================
 ||adanxing.com^
 ||peasun.net^
 ||adsaide.cn^
@@ -81,6 +80,7 @@
 ||adhub.ly.com^
 ||tk.kexin001.com^
 
+# ====================== pcdn相关 ======================
 ! ---------- [1. 通用 PCDN/灰产 SDK 域名（合并 anti-AD pcdn.txt）] ----------
 ||bsccdn.net^
 ||kuiniuca.com^
