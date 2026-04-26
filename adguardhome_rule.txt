@@ -1,19 +1,29 @@
-自用的adguardhome规则，主要用于限制视频等平台的cdn上传及电视盒子的上传，同时对日常使用过程中无法打开的网页加入白名单以及需要拦截的网页加入黑名单
+! 自用的 AdGuard Home 规则（DNS 过滤），主要用于限制视频等平台 PCDN 上传、电视盒子上报，
+! 同时包含日常遇到的白名单与黑名单。
+! 使用：AdGuard Home → DNS 封锁清单 → 添加黑名单 → 填入本文件 raw 链接。
 
-||gkybz252.com
-||d3vvyp77jrl6x3.cloudfront.net
+! 通用黑名单（按需增减）
+||gkybz252.com^
+||d3vvyp77jrl6x3.cloudfront.net^
+||www.userscss.top^
+||adanxing.com^
+
+! 通用白名单
 @@||skylinewebcams.com^
 @@||browsercfg-drcn.cloud.dbankcloud.cn^
 @@||qzhnet.com^
 @@||bmcx.com^
 @@||dns.weixin.qq.com.cn^
-||www.userscss.top^$important
-||adanxing.com^
-@@||metrics1-drcn.dt.dbankcloud.cn^$important
-#@@||xiaohongshu.com^$important
-*@@||126.net^$important
+@@||metrics1-drcn.dt.dbankcloud.cn^
+
+! 已废弃/不再需要的规则（可注释保留备查）
+#@@||xiaohongshu.com^
+
+! 网易云音乐 CDN 放行（126.net）
+@@||126.net^
+
 # ====================== OPPO / HeyTap 精准刚需放行（修复下载更新） ======================
-# OPPO/HeyTap 精准放行 不全局放开
+# 只放行必要的域名，避免全局放开
 @@||account.heytapmobi.com^
 @@||sso.heytapmobi.com^
 @@||passport.heytapmobi.com^
@@ -31,13 +41,15 @@
 @@||oppo.cn^
 @@||oppomobile.com^
 @@||heytap.com^
-# 强制拦截 HeyTap 追踪广告
+
+! 强制拦截 HeyTap 追踪/广告/统计
 ||track.heytapmobi.com^
 ||stat.heytapmobi.com^
 ||log.heytapmobi.com^
 ||ad.heytapmobi.com^
 ||data.heytapmobi.com^
 ||report.heytapmobi.com^
+
 # ---- 电视盒子类的拦截与放行 ----
 ||adanxing.com^
 ||peasun.net^
@@ -68,6 +80,7 @@
 ||xiawan8.com^
 ||adhub.ly.com^
 ||tk.kexin001.com^
+
 ! ---------- [1. 通用 PCDN/灰产 SDK 域名（合并 anti-AD pcdn.txt）] ----------
 ||bsccdn.net^
 ||kuiniuca.com^
@@ -80,17 +93,14 @@
 ||onethingpcs.com^
 ||nexusedgeio.com^
 ||szbdyd.com^
-
 ! ---------- [2. 哔哩哔哩 - Bilibili] ----------
 ! 点播 PCDN（劣质节点）
 ||mcdn.bilivideo.com^
 ||mcdn.bilivideo.cn^
-||szbdyd.com^
 ! biliapi 的 PCDN tracker 子域（用通配子串，风险低）
 ||*pcdn*.biliapi.net^
 ! 直播 P2P Tracker（只杀信令，不杀弹幕）
-||*live-tracker*.chat.bilibili.com^
-
+/live\-tracker\..*\.chat\.bilibili\.com/
 ! ---------- [3. 斗鱼 - Douyu] ----------
 ||p2p.douyucdn.cn^
 ||p2p-ali.douyucdn.cn^
@@ -105,21 +115,17 @@
 ||p2plive-ali.douyucdn.cn^
 ||p2plive-ws.douyucdn.cn^
 ||p2pvod-ws.douyucdn.cn^
+! trk 信令：DNS 通配写法
 ||trk-*.douyucdn.cn^
-! 以下为 SDK/上报类，建议保留（可选）
+! 若你想更稳健，可改为正则：/trk-.*\.douyucdn\.cn/
 ||bjfesdk.douyucdn.cn^
 ||dotcounter.douyucdn.cn^
 ||sdkapi.douyucdn.cn^
 ||dyp2p-ali.douyucdn.cn^
 ||dyp2p-hw.douyucdn.cn^
-
-! ---------- [4. 虎牙 - Huya] ----------
-||p2p.huya.com^
-
 ! ---------- [5. 字节/西瓜/抖音] ----------
-! 仅保留明确的 FLIVE/PCDN 推流/拉流（不放 RTMP 整域）
+! 仅保留明确的 FLIVE/PCDN 拉流（不放 RTMP 整域）
 ||pull-hs-*-hot.flive.douyincdn.com^
-
 ! ---------- [6. 腾讯视频 / 腾讯系] ----------
 ||hcdn.video.qq.com^
 ||pcdn.video.qq.com^
@@ -127,22 +133,17 @@
 ||p2ptun.qq.com^
 ||p2pupdate.gamedl.qq.com^
 ||p2pupgrade.gamedl.qq.com^
-
 ! ---------- [7. 爱奇艺 - iQiyi] ----------
 ||hcdn.qiyi.com^
 ||pdata.video.qiyi.com^
 ||tpa-hcdn.iqiyi.com^
-
 ! ---------- [8. 优酷 / 土豆 - Youku] ----------
 ||atm.youku.com^
-
 ! ---------- [9. 音乐与下载] ----------
 ||trackercdn.kugou.com^
 ||sf.163.com^
 ||isure6.stream.qqmusic.qq.com^
 ||pcdn.yximgs.com^
-
 ! ---------- [10. 基础广告/统计（选配，避免过度干扰）] ----------
 ||static.doubleclick.net^
 ||gdt.qq.com^
-
