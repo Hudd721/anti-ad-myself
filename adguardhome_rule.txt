@@ -133,13 +133,18 @@
 ||hcdn.qiyi.com^
 ||pdata.video.qiyi.com^
 ||tpa-hcdn.iqiyi.com^
+||t7z.cupid.ptqy.gitv.tv
 ! ---------- [8. 优酷 / 土豆 - Youku] ----------
 ||atm.youku.com^
 ! ---------- [9. 音乐与下载] ----------
 ||trackercdn.kugou.com^
+||mobiletrackercdn.kugou.com^
 ||sf.163.com^
 ||isure6.stream.qqmusic.qq.com^
 ||pcdn.yximgs.com^
+||p-cdn.com^
+||pscdn.co^
+||p.scdn.co^
 ! ---------- [10. 基础广告/统计（选配，避免过度干扰）] ----------
 ||static.doubleclick.net^
 ||gdt.qq.com^
