@@ -6,14 +6,12 @@
 ||gkybz252.com^
 ||d3vvyp77jrl6x3.cloudfront.net^
 ||www.userscss.top^
-||adanxing.com^
 
 ! 通用白名单
 @@||skylinewebcams.com^
 @@||browsercfg-drcn.cloud.dbankcloud.cn^
 @@||qzhnet.com^
 @@||bmcx.com^
-@@||dns.weixin.qq.com.cn^
 @@||metrics1-drcn.dt.dbankcloud.cn^
 
 ! 已废弃/不再需要的规则（可注释保留备查）
@@ -38,8 +36,6 @@
 @@||nearme.com.cn^
 @@||store.nearme.com.cn^
 @@||dl.nearme.com.cn^
-@@||oppo.cn^
-@@||oppomobile.com^
 @@||heytap.com^
 ! ---------- 强制拦截 HeyTap 追踪/广告/统计 ----------
 ||track.heytapmobi.com^
