@@ -94,7 +94,10 @@
 ! biliapi 的 PCDN tracker 子域（用通配子串，风险低）
 ||*pcdn*.biliapi.net^
 ! 直播 P2P Tracker（只杀信令，不杀弹幕）
-/live\-tracker\..*\.chat\.bilibili\.com/
+/.*live-tracker.*\.chat\.bilibili\.com/
+||stun.chat.bilibili.com^
+||stun-*.chat.bilibili.com^
+||stun*.chat.bilibili.com^
 ! ---------- [3. 斗鱼 - Douyu] ----------
 ||p2p.douyucdn.cn^
 ||p2p-ali.douyucdn.cn^
