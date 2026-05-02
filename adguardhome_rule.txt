@@ -12,6 +12,7 @@
 ||sjxydc.com^
 ||ctydoh.cn^
 ||cjjd14.com^
+||logifier.doubao.com^
 
 ! 通用白名单
 @@||skylinewebcams.com^
