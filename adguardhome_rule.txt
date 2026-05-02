@@ -7,11 +7,6 @@
 ||d3vvyp77jrl6x3.cloudfront.net^
 ||www.userscss.top^
 ||dig.bdurl.net
-||handsup.today
-||dahhxxttxs.com^
-||sjxydc.com^
-||ctydoh.cn^
-||cjjd14.com^
 ||logifier.doubao.com^
 
 ! 通用白名单
@@ -80,6 +75,12 @@
 ||xiawan8.com^
 ||adhub.ly.com^
 ||tk.kexin001.com^
+||dangsfly.com^
+||handsup.today
+||dahhxxttxs.com^
+||sjxydc.com^
+||ctydoh.cn^
+||cjjd14.com^
 
 # ====================== pcdn相关 ======================
 ! ---------- [1. 通用 PCDN/灰产 SDK 域名（合并 anti-AD pcdn.txt）] ----------
