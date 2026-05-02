@@ -9,6 +9,9 @@
 ||dig.bdurl.net
 ||handsup.today
 ||dahhxxttxs.com^
+||sjxydc.com^
+||ctydoh.cn^
+||cjjd14.com^
 
 ! 通用白名单
 @@||skylinewebcams.com^
