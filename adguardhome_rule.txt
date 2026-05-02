@@ -6,6 +6,8 @@
 ||gkybz252.com^
 ||d3vvyp77jrl6x3.cloudfront.net^
 ||www.userscss.top^
+||dig.bdurl.net
+||handsup.today
 
 ! 通用白名单
 @@||skylinewebcams.com^
