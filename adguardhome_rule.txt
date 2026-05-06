@@ -10,6 +10,8 @@
 ||logifier.doubao.com^
 #广告、追踪相关
 ||wuchuyun.com^
+||wuchuyun.net^
+||smtcdns.com^
 ||0kkkkkt.com^
 ||ppos.com^
 ||ndcpp.com^
