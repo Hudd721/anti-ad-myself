@@ -4,7 +4,7 @@
 
 ! 通用黑名单（按需增减）
 ||gkybz252.com^
-||www.userscss.top^
+||userscss.top^
 ||logifier.doubao.com^
 ||sdktt.data.tianwenca.com^
 #广告、追踪相关
