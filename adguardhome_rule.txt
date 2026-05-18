@@ -13,7 +13,7 @@
 ||alibabachengdun.com^
 ||wuchuyun.com^
 ||wuchuyun.net^
-||smtcdns.com^
+#||smtcdns.com^元宝：该域名主要用于分发 腾讯视频、游戏直播、点播等流媒体内容，不建议拦截
 ||0kkkkkt.com^
 ||ppos.com^
 ||ndcpp.com^
