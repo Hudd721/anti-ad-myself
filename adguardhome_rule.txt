@@ -62,10 +62,11 @@
 ||report.heytapmobi.com^
 
 # ====================== 电视盒子类的拦截与放行 ======================
-||adanxing.com^
-||peasun.net^
+#||peasun.net^ 深圳市品索科技官网，合法企业站点
+#||ctrmi.cn^ CTR媒介智讯（市场研究）官网
+#||112114.xyz^ 提供电视EPG节目单接口，拦截影响电视应用
 ||adsaide.cn^
-||112114.xyz^
+||adanxing.com^
 ||appsad.cn^
 ||mathpool.cn^
 ||clickfuntech.com^
@@ -86,7 +87,6 @@
 ||ssp.adfinx.cn^
 ||agentx.xiaoxiongyun.cn^
 ||sychlon.com^
-||ctrmi.cn^
 ||g.ad.radobox.com.cn^
 ||xiawan8.com^
 ||adhub.ly.com^
