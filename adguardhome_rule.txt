@@ -10,6 +10,7 @@
 ||logifier.doubao.com^
 ||sdktt.data.tianwenca.com^
 #广告、追踪相关
+||alibabachengdun.com^
 ||wuchuyun.com^
 ||wuchuyun.net^
 ||smtcdns.com^
