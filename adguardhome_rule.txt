@@ -13,9 +13,11 @@
 #||dig.bdurl.net 字节跳动HTTPDNS服务，屏蔽会导致一些字节应用无法登录或联网
 #||smtcdns.com^ 元宝：该域名主要用于分发 腾讯视频、游戏直播、点播等流媒体内容，不建议拦截
 #||ppos.com^ 派欧云计算(上海)有限公司，也是PPTV智能电视系统的名称
-#||ndcpp.com^ 抖音视界有限公司，通常与视频处理、内容分发网络（CDN）相关
-#||ctydoh.cn^ 天翼云科技有限公司
 #||ahdohpiechei.com^ HBuilderX（DCloud开发工具）的官方域名，用于插件下载和更新的CDN域名之一
+#元宝称ndcpp为“抖音视界有限公司，通常与视频处理、内容分发网络（CDN）相关”，豆包则要求继续拦截，原因为“已过期的可疑域名”
+||ndcpp.com^ 
+#元宝称ctydoh是天翼云科技有限公司的，豆包则说是纯广告/追踪域名，非天翼云产品
+||ctydoh.cn^ 
 ||wuchuyun.com^
 ||wuchuyun.net^
 ||0kkkkkt.com^
