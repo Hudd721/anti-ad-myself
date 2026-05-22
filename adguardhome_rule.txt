@@ -27,10 +27,8 @@
 
 ! 通用白名单
 @@||skylinewebcams.com^
-@@||browsercfg-drcn.cloud.dbankcloud.cn^
 @@||qzhnet.com^
 @@||bmcx.com^
-@@||metrics1-drcn.dt.dbankcloud.cn^
 
 ! 已废弃/不再需要的规则（可注释保留备查）
 #@@||xiaohongshu.com^
