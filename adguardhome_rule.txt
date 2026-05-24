@@ -38,21 +38,21 @@
 
 # ====================== OPPO / HeyTap 精准刚需放行（修复下载更新） ======================
 ! ---------- 只放行必要的域名，避免全局放开----------
-@@||account.heytapmobi.com^
-@@||sso.heytapmobi.com^
-@@||passport.heytapmobi.com^
-@@||store.heytapmobi.com^
-@@||app.heytapmobi.com^
-@@||update.heytapmobi.com^
-@@||dl.heytapmobi.com^
-@@||cdn.heytapmobi.com^
-@@||down.heytapmobi.com^
-@@||device.heytapmobi.com^
-@@||api.heytapmobi.com^
-@@||nearme.com.cn^
-@@||store.nearme.com.cn^
-@@||dl.nearme.com.cn^
-@@||heytap.com^
+!@@||account.heytapmobi.com^
+!@@||sso.heytapmobi.com^
+!@@||passport.heytapmobi.com^
+!@@||store.heytapmobi.com^
+!@@||app.heytapmobi.com^
+!@@||update.heytapmobi.com^
+!@@||dl.heytapmobi.com^
+!@@||cdn.heytapmobi.com^
+!@@||down.heytapmobi.com^
+!@@||device.heytapmobi.com^
+!@@||api.heytapmobi.com^
+!@@||nearme.com.cn^
+!@@||store.nearme.com.cn^
+!@@||dl.nearme.com.cn^
+!@@||heytap.com^
 ! ---------- 强制拦截 HeyTap 追踪/广告/统计 ----------
 ||track.heytapmobi.com^
 ||stat.heytapmobi.com^
@@ -60,6 +60,7 @@
 ||ad.heytapmobi.com^
 ||data.heytapmobi.com^
 ||report.heytapmobi.com^
+||push-ads-cn.heytapmobi.com
 
 # ====================== 电视盒子类的拦截与放行 ======================
 #||peasun.net^ 深圳市品索科技官网，合法企业站点
