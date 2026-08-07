@@ -8,6 +8,13 @@
 ||logifier.doubao.com^
 ||sdktt.data.tianwenca.com^
 #广告、追踪相关
+||senser.kydcm.cn^
+||clientlognew.kydcm.cn^
+||iuni.telecome.cn^
+||senser.kydcm.cn^
+||tp-pay.snssdk.com.queniuiq.com^
+||sdk-log.partner.sm.cn^
+||pcdn-pxy-tracker.xxpkg.com^
 #||d3vvyp77jrl6x3.cloudfront.net^ 亚马逊CloudFront CDN节点。拦截会误伤大量正常网站的资源加载
 #||alibabachengdun.com^ 杭州橙盾信息科技有限公司旗下，与阿里巴巴生态相关，可能用于电商或云服务
 #||dig.bdurl.net 字节跳动HTTPDNS服务，屏蔽会导致一些字节应用无法登录或联网
@@ -27,12 +34,13 @@
 #Countly是开源的实时用户分析平台，专注于移动 / 网页应用的用户行为追踪和性能监控；lolli.tech是美国比特币奖励平台 Lolli 的域名，已被 Thesis 收购
 ||countly.lolli.tech^
 #明确的广告/追踪域名
+||e-u1.ubixioe.com^
 ||adx-data-u1.ubixioe.com^
 ||dsp-creative.ubixioe.com^
 ||entry-su1.ubixioe.com^
+||adm.zhangyuyidong.cn^
 ||leadmoad.com^
 ||ad-union-e.kydce.cn^
-||senser.kydcm.cn^
 
 ! 通用白名单
 @@||skylinewebcams.com^
