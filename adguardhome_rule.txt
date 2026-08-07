@@ -26,6 +26,13 @@
 ||cjjd14.com^
 #Countly是开源的实时用户分析平台，专注于移动 / 网页应用的用户行为追踪和性能监控；lolli.tech是美国比特币奖励平台 Lolli 的域名，已被 Thesis 收购
 ||countly.lolli.tech^
+#明确的广告/追踪域名
+||adx-data-u1.ubixioe.com^
+||dsp-creative.ubixioe.com^
+||entry-su1.ubixioe.com^
+||leadmoad.com^
+||ad-union-e.kydce.cn^
+||senser.kydcm.cn^
 
 ! 通用白名单
 @@||skylinewebcams.com^
@@ -109,6 +116,8 @@
 ||onethingpcs.com^
 ||nexusedgeio.com^
 ||szbdyd.com^
+||tm-access.xxpkg.com^
+||pcdn-pxy-tracker.xxpkg.com^
 ! ---------- [2. 哔哩哔哩 - Bilibili] ----------
 ! 点播 PCDN（劣质节点）
 ||mcdn.bilivideo.com^
