@@ -16,11 +16,11 @@
 ||tp-pay.snssdk.com.queniuiq.com^
 ||sdk-log.partner.sm.cn^
 ||pcdn-pxy-tracker.xxpkg.com^
-||e-u1.ubixioe.com^
+||ubixioe.com^
 ||adx-data-u1.ubixioe.com^
 ||dsp-creative.ubixioe.com^
 ||entry-su1.ubixioe.com^
-||adm.zhangyuyidong.cn^
+||zhangyuyidong.cn^
 ||leadmoad.com^
 ||ad-union-e.kydce.cn^
 ||ad-logs.seeyouyima.com
