@@ -117,18 +117,24 @@
 # ====================== pcdn相关 ======================
 ! ---------- [1. 通用 PCDN/灰产 SDK 域名（合并 anti-AD pcdn.txt）] ----------
 ||bsccdn.net^
+||bsclink.cn^
+||bsgslb.cn^
+||ietheivaicai.com^
+||jomodns.cn^
 ||kuiniuca.com^
+||nexusedgeio.com^
+||onethingpcs.com^
 ||pkoplink.com^
+||pplive-p2p.com^
+||pcdn.xmcdn.com^
+||pcdn.ksyun.com^
+||pcdn-pxy-tracker.xxpkg.com^
 ||saxysec.com^
+||szbdyd.com^
 ||stun.hitv.com^
 ||uhabo.com^
 ||xycdn.com^
-||ietheivaicai.com^
-||onethingpcs.com^
-||nexusedgeio.com^
-||szbdyd.com^
-||tm-access.xxpkg.com^
-||pcdn-pxy-tracker.xxpkg.com^
+||yfcloud.com^
 ! ---------- [2. 哔哩哔哩 - Bilibili] ----------
 ! 点播 PCDN（劣质节点）
 ||mcdn.bilivideo.com^
@@ -140,7 +146,7 @@
 ||stun.chat.bilibili.com^
 ||stun-*.chat.bilibili.com^
 ||stun*.chat.bilibili.com^
-! ---------- [3. 斗鱼 - Douyu] ----------
+! ---------- [3. 斗鱼&虎牙 - Douyu&Huya] ----------
 ||p2p.douyucdn.cn^
 ||p2p-ali.douyucdn.cn^
 ||streamdot.douyucdn.cn^
@@ -162,7 +168,10 @@
 ||sdkapi.douyucdn.cn^
 ||dyp2p-ali.douyucdn.cn^
 ||dyp2p-hw.douyucdn.cn^
-! ---------- [5. 字节/西瓜/抖音] ----------
+||p2p.huya.com^
+||pcdn-pxy-tracker.xxpkg.com^
+||tm-access.xxpkg.com^
+! ---------- [5. 字节/西瓜/抖音/快手] ----------
 ! 仅保留明确的 FLIVE/PCDN 拉流（不放 RTMP 整域）
 ||pull-hs-*-hot.flive.douyincdn.com^
 ||*.p2p.*.bytedance.com^
@@ -173,13 +182,16 @@
 ||*.stun.*.bytedance.com^
 ||*.stun.*.snssdk.com^
 ||*.stun.*.douyin.com^
+||pcdn.yximgs.com^
+||kspcdn.com^
+||ws-p2p.com^
 ! ---------- [6. 腾讯视频 / 腾讯系] ----------
-||hcdn.video.qq.com^
-||pcdn.video.qq.com^
+||musicps.p2p.qq.com^
 ||p2p.qq.com^
+||p2p.l.qq.com^
 ||p2ptun.qq.com^
-||p2pupdate.gamedl.qq.com^
-||p2pupgrade.gamedl.qq.com^
+||p2p.vod.v.qq.com^
+||vlivep2p.tc.qq.com^
 ! ---------- [7. 爱奇艺 - iQiyi] ----------
 ||hcdn.qiyi.com^
 ||pdata.video.qiyi.com^
@@ -198,6 +210,7 @@
 ||p.scdn.co^
 ! 网易云音乐 CDN 放行（126.net）
 @@||126.net^
-! ---------- [10. 基础广告/统计（选配，避免过度干扰）] ----------
+||*.prod.do.dsp.mp.microsoft.com^
+! ---------- [11. 基础广告/统计（选配，避免过度干扰）] ----------
 ||static.doubleclick.net^
 ||gdt.qq.com^
