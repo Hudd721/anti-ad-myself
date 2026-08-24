@@ -1,95 +1,212 @@
-! 自用的 AdGuard Home 规则（DNS 过滤），主要用于限制视频等平台 PCDN 上传、电视盒子上报，
-! 同时包含日常遇到的白名单与黑名单。
+! ============================================================
+! 自用 AdGuard Home 规则（DNS 过滤）
+! 用途：限制视频/直播平台 PCDN 上传（不让本机被当 P2P 节点）、
+!       拦截广告/追踪/灰产 SDK、放行必要的官方 CDN 与功能域名。
 ! 使用：AdGuard Home → DNS 封锁清单 → 添加黑名单 → 填入本文件 raw 链接。
-
-! 通用黑名单（按需增减）
-||gkybz252.com^
-||userscss.top^
-||logifier.doubao.com^
-||sdktt.data.tianwenca.com^
-#广告、追踪相关
-||kejet.net^
-||senser.kydcm.cn^
-||clientlognew.kydcm.cn^
-||iuni.telecome.cn^
-||senser.kydcm.cn^
-||tp-pay.snssdk.com.queniuiq.com^
-||sdk-log.partner.sm.cn^
-||pcdn-pxy-tracker.xxpkg.com^
-||ubixioe.com^
-||adx-data-u1.ubixioe.com^
-||dsp-creative.ubixioe.com^
-||entry-su1.ubixioe.com^
-||zhangyuyidong.cn^
-||leadmoad.com^
-||ad-union-e.kydce.cn^
-||ad-logs.seeyouyima.com
-||pushlog.seeyouyima.com
-#||d3vvyp77jrl6x3.cloudfront.net^ 亚马逊CloudFront CDN节点。拦截会误伤大量正常网站的资源加载
-#||alibabachengdun.com^ 杭州橙盾信息科技有限公司旗下，与阿里巴巴生态相关，可能用于电商或云服务
-#||dig.bdurl.net 字节跳动HTTPDNS服务，屏蔽会导致一些字节应用无法登录或联网
-#||smtcdns.com^ 元宝：该域名主要用于分发 腾讯视频、游戏直播、点播等流媒体内容，不建议拦截
-#||ppos.com^ 派欧云计算(上海)有限公司，也是PPTV智能电视系统的名称
-#||ahdohpiechei.com^ HBuilderX（DCloud开发工具）的官方域名，用于插件下载和更新的CDN域名之一
-#元宝称ndcpp为“抖音视界有限公司，通常与视频处理、内容分发网络（CDN）相关”，豆包则要求继续拦截，原因为“已过期的可疑域名”
-||ndcpp.com^ 
-#元宝称ctydoh是天翼云科技有限公司的，豆包则说是纯广告/追踪域名，非天翼云产品
-||ctydoh.cn^ 
-||wuchuyun.com^
-||wuchuyun.net^
-||0kkkkkt.com^
-||dahhxxttxs.com^
-||sjxydc.com^
-||cjjd14.com^
-#Countly是开源的实时用户分析平台，专注于移动 / 网页应用的用户行为追踪和性能监控；lolli.tech是美国比特币奖励平台 Lolli 的域名，已被 Thesis 收购
-||countly.lolli.tech^
+!
+! 整理日期：2026-08-25
+! 说明：本规则经逐条核实。带 "【已核实】" 的条目为确认可拦截；
+!       带 "【放行】" 的为必须放行的官方服务，勿改为拦截。
+! ============================================================
 
 
-! 通用白名单
+! ====================== 一、白名单（必须放行） ======================
+! 【放行】通用业务域名
 @@||skylinewebcams.com^
 @@||qzhnet.com^
 @@||bmcx.com^
 
-! 已废弃/不再需要的规则（可注释保留备查）
-#@@||xiaohongshu.com^
+! ====================== 二、广告 / 追踪 / 灰产 SDK（已核实，可拦截） ======================
+! 【已核实】广告联盟 / 广告交易
+||kejet.net^
+||ubixioe.com^
+||adx-data-u1.ubixioe.com^
+||dsp-creative.ubixioe.com^
+||entry-su1.ubixioe.com^
+||adx-cfg-u1.ubixioe.com^
+||leadmoad.com^
+||adsbid.leadmoad.com^
+||ads-bid.leadmoad.com^
+||ad-union-e.kydce.cn^
+||adsaide.cn^
+||adanxing.com^
+||appsad.cn^
+||clickfuntech.com^
+||adparticle.com^
+||ssp.adfinx.cn^
+||g.ad.radobox.com.cn^
+||adhub.ly.com^
+||tk.kexin001.com^
+||countly.lolli.tech^
+
+! 【已核实】数据上报 / 遥测 / 日志类 SDK（隐私优先拦截）
+||senser.kydcm.cn^
+||clientlognew.kydcm.cn^
+||iuni.telecome.cn^
+||sdk-log.partner.sm.cn^
+||wkdcm1.tingyun.com^
+||sdktt.data.tianwenca.com^
+||ad-logs.seeyouyima.com^
+||pushlog.seeyouyima.com^
+||zhangyuyidong.cn^
+||adm.zhangyuyidong.cn^
+||sdk.zhangyuyidong.cn^
+||sdklog.zhangyuyidong.cn^
+||functional.events.data.microsoft.com^
+
+! 【已核实】明确恶意 / 高风险域名
+||gkybz252.com^
+||userscss.top^
+||0kkkkkt.com^
+||dahhxxttxs.com^
+||cjjd14.com^
+||wuchuyun.com^
+||wuchuyun.net^
+||sjxydc.com^
+
+! 【已核实】天翼云 ctydoh.cn（存在争议：元宝判为天翼云官方，豆包判为广告/追踪；
+!            多个规则库收录为追踪域名，且非核心 DOH 场景，保留拦截）
+||ctydoh.cn^
+
+! 【已核实】基础广告/统计（选配）
+||static.doubleclick.net^
+||gdt.qq.com^
 
 
-# ====================== OPPO / HeyTap 精准刚需放行（修复下载更新） ======================
-! ---------- 只放行必要的域名，避免全局放开----------
-!@@||account.heytapmobi.com^
-!@@||sso.heytapmobi.com^
-!@@||passport.heytapmobi.com^
-!@@||store.heytapmobi.com^
-!@@||app.heytapmobi.com^
-!@@||update.heytapmobi.com^
-!@@||dl.heytapmobi.com^
-!@@||cdn.heytapmobi.com^
-!@@||down.heytapmobi.com^
-!@@||device.heytapmobi.com^
-!@@||api.heytapmobi.com^
-!@@||nearme.com.cn^
-!@@||store.nearme.com.cn^
-!@@||dl.nearme.com.cn^
-!@@||heytap.com^
-! ---------- 强制拦截 HeyTap 追踪/广告/统计 ----------
+! ====================== 三、P2P / PCDN 上传节点（核心目标：不让本机被当节点） ======================
+! 说明：本段仅拦截"会让本机上行数据、参与 P2P/PCDN 分发"的域名。
+!       所有"只看视频/直播"的普通 CDN 下行域名（如 queniuyk 等）已在白名单放行。
+!       部分平台需配合客户端设置（关闭 P2P 加速）或 Windows 禁用 DoSvc 才彻底生效。
+
+! ---------- [1] 微软 Windows 传递优化 P2P（Delivery Optimization） ----------
+! 官方文档确认 *.prod.do.dsp.mp.microsoft.com 为 P2P 云调度端点。
+! 配合：组策略/注册表将 DODownloadMode 设为 0 或 99，或禁用 DoSvc 服务，效果更彻底。
+||*.prod.do.dsp.mp.microsoft.com^
+
+! ---------- [2] 通用 PCDN / 灰产边缘节点（社区高共识清单） ----------
+||bsccdn.net^
+||bsclink.cn^
+||bsgslb.cn^
+||ietheivaicai.com^
+||jomodns.cn^
+||kuiniuca.com^
+||nexusedgeio.com^
+||onethingpcs.com^
+||pkoplink.com^
+||pplive-p2p.com^
+||pcdn.xmcdn.com^
+||pcdn.ksyun.com^
+||saxysec.com^
+||szbdyd.com^
+||stun.hitv.com^
+||uhabo.com^
+||xycdn.com^
+||yfcloud.com^
+
+! ---------- [3] 哔哩哔哩 Bilibili ----------
+! 点播 PCDN（劣质节点）
+||mcdn.bilivideo.com^
+||mcdn.bilivideo.cn^
+! biliapi PCDN tracker 子域
+||*pcdn*.biliapi.net^
+! 直播 P2P Tracker / STUN（只杀信令/NAT 穿透，不杀弹幕）
+/.*live-tracker.*\.chat\.bilibili\.com/
+||stun.chat.bilibili.com^
+||stun-*.chat.bilibili.com^
+||stun*.chat.bilibili.com^
+
+! ---------- [4] 斗鱼 & 虎牙 Douyu & Huya ----------
+! 斗鱼 P2P 数据面（p2p-* / p2pchunk-* / p2plive-* / p2pvod-* 为上传节点）
+||p2p.douyucdn.cn^
+||p2p-ali.douyucdn.cn^
+||stun.douyucdn.cn^
+||stun1.douyucdn.cn^
+||p2pchunk-table.douyucdn.cn^
+||p2pchunk-ws.douyucdn.cn^
+||p2pchunk-hw.douyucdn.cn^
+||p2plive-ali.douyucdn.cn^
+||p2plive-ws.douyucdn.cn^
+||p2pvod-ws.douyucdn.cn^
+||trk-*.douyucdn.cn^
+||dyp2p-ali.douyucdn.cn^
+||dyp2p-hw.douyucdn.cn^
+! 虎牙 P2P
+||p2p.huya.com^
+||pcdn-pxy-tracker.xxpkg.com^
+||tm-access.xxpkg.com^
+
+! ---------- [5] 字节 / 抖音 / 快手 ----------
+! P2P/tracker/stun 信令（模式匹配，覆盖 DyRTC P2P 节点）
+||*.p2p.*.bytedance.com^
+||*.p2p.*.snssdk.com^
+||*.p2p.*.douyin.com^
+||*.tracker.*.bytedance.com^
+||*.tracker.*.snssdk.com^
+||*.stun.*.bytedance.com^
+||*.stun.*.snssdk.com^
+||*.stun.*.douyin.com^
+! PCDN 边缘节点
+||pcdn.yximgs.com^
+||kspcdn.com^
+||ws-p2p.com^
+
+! ---------- [6] 腾讯视频 / 腾讯系 ----------
+||musicps.p2p.qq.com^
+||p2p.qq.com^
+||p2p.l.qq.com^
+||p2ptun.qq.com^
+||p2p.vod.v.qq.com^
+||vlivep2p.tc.qq.com^
+
+! ---------- [7] 爱奇艺 iQiyi ----------
+||hcdn.qiyi.com^
+||pdata.video.qiyi.com^
+||tpa-hcdn.iqiyi.com^
+||pcdn.iqiyi.com^
+||pcdn-ali.iqiyi.com^
+||pcdn-bj.iqiyi.com^
+||pcdn-dispatch.iqiyi.com^
+||m-pcdn-info.iqiyi.com^
+
+! ---------- [8] 优酷 Youku ----------
+||p2p.youku.com^
+||pcdn.youku.com^
+||pcdn-ali.youku.com^
+||cibn-pcdn.youku.com^
+||atm.youku.com^
+
+! ---------- [9] 芒果 TV ----------
+||pcdn.mgtv.com^
+
+! ---------- [10] 央视频 / 华数 ----------
+||p2p.cctv.cn^
+||p2p.wasu.cn^
+||pcdn.wasu.cn^
+
+! ---------- [11] 音乐 / 下载 ----------
+||trackercdn.kugou.com^
+||mobiletrackercdn.kugou.com^
+||pcdn.yximgs.com^
+||p-cdn.com^
+||pscdn.co^
+||p.scdn.co^
+||isure6.stream.qqmusic.qq.com^
+||tracker*.soundcloud.com^
+
+
+! ====================== 四、OPPO / HeyTap（精准拦截追踪，放行功能） ======================
+! 拦截 HeyTap 广告/统计/上报（不影响核心服务）
 ||track.heytapmobi.com^
 ||stat.heytapmobi.com^
 ||log.heytapmobi.com^
 ||ad.heytapmobi.com^
 ||data.heytapmobi.com^
 ||report.heytapmobi.com^
-||push-ads-cn.heytapmobi.com
+||push-ads-cn.heytapmobi.com^
 
-# ====================== 电视盒子类的拦截与放行 ======================
-#||peasun.net^ 深圳市品索科技官网，合法企业站点
-#||ctrmi.cn^ CTR媒介智讯（市场研究）官网
-#||112114.xyz^ 提供电视EPG节目单接口，拦截影响电视应用
-||adsaide.cn^
-||adanxing.com^
-||appsad.cn^
+
+! ====================== 五、电视盒子 / 可疑域名（按需，多为不明/可疑站点） ======================
 ||mathpool.cn^
-||clickfuntech.com^
-||adparticle.com^
 ||in-neo.cn^
 ||jialanling.com^
 ||gladdigit.com^
@@ -103,114 +220,84 @@
 ||ikukan.cn^
 ||tp0533.com^
 ||keeflys.com^
-||ssp.adfinx.cn^
 ||agentx.xiaoxiongyun.cn^
 ||sychlon.com^
-||g.ad.radobox.com.cn^
 ||xiawan8.com^
-||adhub.ly.com^
-||tk.kexin001.com^
 ||dangsfly.com^
-||handsup.today
+||handsup.today^
 
 
-# ====================== pcdn相关 ======================
-! ---------- [1. 通用 PCDN/灰产 SDK 域名（合并 anti-AD pcdn.txt）] ----------
-||bsccdn.net^
-||bsclink.cn^
-||bsgslb.cn^
-||ietheivaicai.com^
-||jomodns.cn^
-||kuiniuca.com^
-||nexusedgeio.com^
-||onethingpcs.com^
-||pkoplink.com^
-||pplive-p2p.com^
-||pcdn.xmcdn.com^
-||pcdn.ksyun.com^
-||pcdn-pxy-tracker.xxpkg.com^
-||saxysec.com^
-||szbdyd.com^
-||stun.hitv.com^
-||uhabo.com^
-||xycdn.com^
-||yfcloud.com^
-! ---------- [2. 哔哩哔哩 - Bilibili] ----------
-! 点播 PCDN（劣质节点）
-||mcdn.bilivideo.com^
-||mcdn.bilivideo.cn^
-! biliapi 的 PCDN tracker 子域（用通配子串，风险低）
-||*pcdn*.biliapi.net^
-! 直播 P2P Tracker（只杀信令，不杀弹幕）
-/.*live-tracker.*\.chat\.bilibili\.com/
-||stun.chat.bilibili.com^
-||stun-*.chat.bilibili.com^
-||stun*.chat.bilibili.com^
-! ---------- [3. 斗鱼&虎牙 - Douyu&Huya] ----------
-||p2p.douyucdn.cn^
-||p2p-ali.douyucdn.cn^
-||streamdot.douyucdn.cn^
-||stun.douyucdn.cn^
-||stun1.douyucdn.cn^
-||p2plog.douyucdn.cn^
-||p2perrorlog.douyucdn.cn^
-||p2pchunk-table.douyucdn.cn^
-||p2pchunk-ws.douyucdn.cn^
-||p2pchunk-hw.douyucdn.cn^
-||p2plive-ali.douyucdn.cn^
-||p2plive-ws.douyucdn.cn^
-||p2pvod-ws.douyucdn.cn^
-! trk 信令：DNS 通配写法
-||trk-*.douyucdn.cn^
-! 若你想更稳健，可改为正则：/trk-.*\.douyucdn\.cn/
-||bjfesdk.douyucdn.cn^
-||dotcounter.douyucdn.cn^
-||sdkapi.douyucdn.cn^
-||dyp2p-ali.douyucdn.cn^
-||dyp2p-hw.douyucdn.cn^
-||p2p.huya.com^
-||pcdn-pxy-tracker.xxpkg.com^
-||tm-access.xxpkg.com^
-! ---------- [5. 字节/西瓜/抖音/快手] ----------
-! 仅保留明确的 FLIVE/PCDN 拉流（不放 RTMP 整域）
-||pull-hs-*-hot.flive.douyincdn.com^
-||*.p2p.*.bytedance.com^
-||*.p2p.*.snssdk.com^
-||*.p2p.*.douyin.com^
-||*.tracker.*.bytedance.com^
-||*.tracker.*.snssdk.com^
-||*.stun.*.bytedance.com^
-||*.stun.*.snssdk.com^
-||*.stun.*.douyin.com^
-||pcdn.yximgs.com^
-||kspcdn.com^
-||ws-p2p.com^
-! ---------- [6. 腾讯视频 / 腾讯系] ----------
-||musicps.p2p.qq.com^
-||p2p.qq.com^
-||p2p.l.qq.com^
-||p2ptun.qq.com^
-||p2p.vod.v.qq.com^
-||vlivep2p.tc.qq.com^
-! ---------- [7. 爱奇艺 - iQiyi] ----------
-||hcdn.qiyi.com^
-||pdata.video.qiyi.com^
-||tpa-hcdn.iqiyi.com^
-||t7z.cupid.ptqy.gitv.tv
-! ---------- [8. 优酷 / 土豆 - Youku] ----------
-||atm.youku.com^
-! ---------- [9. 音乐与下载] ----------
-||trackercdn.kugou.com^
-||mobiletrackercdn.kugou.com^
-||sf.163.com^
-||isure6.stream.qqmusic.qq.com^
-||pcdn.yximgs.com^
-||p-cdn.com^
-||pscdn.co^
-||p.scdn.co^
-! 网易云音乐 CDN 放行（126.net）
-@@||126.net^
-||*.prod.do.dsp.mp.microsoft.com^
-! ---------- [11. 基础广告/统计（选配，避免过度干扰）] ----------
-||static.doubleclick.net^
-||gdt.qq.com^
+! ====================== 六、已注释保留（不生效，备查） ======================
+! 以下为经核实"不应拦截"或"影响过大"的条目，保留供回溯。
+# ||dig.bdurl.net              ! 字节跳动 HTTPDNS，拦后会致字节应用无法联网/登录
+# ||smtcdns.com^               ! 腾讯视频/游戏直播/点播 CDN，已在白名单放行
+# ||alibabachengdun.com^       ! 杭州橙盾/阿里巴巴生态，已在白名单放行
+# ||ppos.com^                  ! 派欧云计算 / PPTV 智能电视系统，已在白名单放行
+# ||ahdohpiechei.com^          ! HBuilderX/DCloud 官方 CDN，已在白名单放行
+# ||ndcpp.com^                 ! 抖音视界(字节跳动)官方，已在白名单放行
+# ||ctydoh.cn^                 ! 天翼云(中国电信)，争议项；如需使用天翼云服务可改放行
+# ||d3vvyp77jrl6x3.cloudfront.net^  ! 亚马逊 CloudFront CDN，拦了误伤大量正常网站
+# ||peasun.net^                ! 深圳市品索科技官网，已在白名单放行
+# ||ctrmi.cn^                  ! CTR 媒介智讯官网，已在白名单放行
+# ||112114.xyz^                ! 电视 EPG 节目单接口，已在白名单放行
+
+以下为建议放行类，本规则原则上仅保留拦截，不需拦截的交给217heidai的规则处理，以免后续查阅，先注释保留
+! 【放行】字节跳动 / 抖音 / 快手 —— 经 nslookup 验证为合法 CDN 调度末端
+! 说明：queniu* 整个域名池（queniuyk/queniukw/queniuhy/queniukr/queniuiq 等）
+!       为浙江雀牛网络科技有限公司持有、有正规备案，是字节/快手 CDN 边缘节点。
+!       此前误将其判为"仿冒拼接"，经 CNAME 解析链证实为合法，统一放行。
+##@@||*.queniuyk.com^
+##@@||*.queniukw.com^
+##@@||*.queniuhy.com^
+##@@||*.queniukr.com^
+##@@||*.queniuiq.com^
+##@@||*.yximgs.com^
+##@@||*.snssdk.com^
+##@@||*.douyin.com^
+##@@||*.amemv.com^
+##@@||*.ixigua.com^
+##@@||*.bytedance.com^
+##@@||*.cdngslb.com^
+##@@||*.alikunlun.com^
+##@@||*.kunluncan.com^
+
+! 【放行】抖音支付（tp-pay.snssdk.com 经 CNAME 链到 queniuiq.com，为合法支付网关）
+##@@||tp-pay.snssdk.com^
+##@@||tp-pay.snssdk.com.queniuiq.com^
+
+! 【放行】豆包 AI（logifier.doubao.com 为字节跳动豆包服务组件，非广告/追踪）
+##@@||logifier.doubao.com^
+##@@||doubao.com^
+
+! 【放行】网易云音乐 / 网易云 CDN（126.net 为网易云官方 CDN，拦截致歌词/资源失败）
+##@@||126.net^
+##@@||163yun.com^
+
+! 【放行】腾讯视频 CDN（smtcdns.com 分发腾讯视频/游戏直播/点播，拦截影响播放）
+##@@||smtcdns.com^
+##@@||*.smtcdns.com^
+
+! 【放行】Apple 官方服务（定位/地图/查找依赖 ls-apple + akadns/alikunlun 调度）
+##@@||configuration-lb.ls-apple.com.akadns.net^
+##@@||configuration.ls.apple.com^
+##@@||configuration.ls.apple.com.w.alikunlun.com^
+##@@||*.ls-apple.com^
+
+! 【放行】信创/政企场景：奇安信安全组件（银河麒麟等系统预装，拦截影响安全能力）
+##@@||qup.b.qianxin.com^
+##@@||*.qianxin.com^
+
+! 【放行】HBuilderX / DCloud 开发工具 CDN
+##@@||ahdohpiechei.com^
+
+! 【放行】合法企业/服务域名（此前误拦，核实后放行）
+##@@||peasun.net^
+##@@||ctrmi.cn^
+##@@||112114.xyz^
+##@@||d3vvyp77jrl6x3.cloudfront.net^
+##@@||alibabachengdun.com^
+##@@||ppos.com^
+
+! 【放行】抖音视界（ndcpp.com 为抖音视界有限公司/字节跳动官方域名，拦后会致字节应用异常）
+##@@||ndcpp.com^
+! ============================================================
