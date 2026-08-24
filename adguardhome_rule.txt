@@ -17,7 +17,7 @@
 @@||bmcx.com^
 
 ! ====================== 二、广告 / 追踪 / 灰产 SDK（已核实，可拦截） ======================
-! 【已核实】广告联盟 / 广告交易
+! 广告联盟 / 广告交易
 ||kejet.net^
 ||ubixioe.com^
 ||adx-data-u1.ubixioe.com^
@@ -39,7 +39,7 @@
 ||tk.kexin001.com^
 ||countly.lolli.tech^
 
-! 【已核实】数据上报 / 遥测 / 日志类 SDK（隐私优先拦截）
+! 数据上报 / 遥测 / 日志类 SDK（隐私优先拦截）
 ||senser.kydcm.cn^
 ||clientlognew.kydcm.cn^
 ||iuni.telecome.cn^
@@ -54,7 +54,7 @@
 ||sdklog.zhangyuyidong.cn^
 ||functional.events.data.microsoft.com^
 
-! 【已核实】明确恶意 / 高风险域名
+! 明确恶意 / 高风险域名
 ||gkybz252.com^
 ||userscss.top^
 ||0kkkkkt.com^
@@ -64,8 +64,7 @@
 ||wuchuyun.net^
 ||sjxydc.com^
 
-! 【已核实】天翼云 ctydoh.cn（存在争议：元宝判为天翼云官方，豆包判为广告/追踪；
-!            多个规则库收录为追踪域名，且非核心 DOH 场景，保留拦截）
+! 天翼云 ctydoh.cn（存在争议：元宝判为天翼云官方，豆包判为广告/追踪；多个规则库收录为追踪域名，且非核心 DOH 场景，保留拦截）
 ||ctydoh.cn^
 
 ! 【已核实】基础广告/统计（选配）
@@ -76,11 +75,8 @@
 ! ====================== 三、P2P / PCDN 上传节点（核心目标：不让本机被当节点） ======================
 ! 说明：本段仅拦截"会让本机上行数据、参与 P2P/PCDN 分发"的域名。
 !       所有"只看视频/直播"的普通 CDN 下行域名（如 queniuyk 等）已在白名单放行。
-!       部分平台需配合客户端设置（关闭 P2P 加速）或 Windows 禁用 DoSvc 才彻底生效。
-
 ! ---------- [1] 微软 Windows 传递优化 P2P（Delivery Optimization） ----------
-! 官方文档确认 *.prod.do.dsp.mp.microsoft.com 为 P2P 云调度端点。
-! 配合：组策略/注册表将 DODownloadMode 设为 0 或 99，或禁用 DoSvc 服务，效果更彻底。
+! 官方文档确认 *.prod.do.dsp.mp.microsoft.com 为 P2P 云调度端点,配合：组策略/注册表将 DODownloadMode 设为 0 或 99，或禁用 DoSvc 服务，效果更彻底。
 ||*.prod.do.dsp.mp.microsoft.com^
 
 ! ---------- [2] 通用 PCDN / 灰产边缘节点（社区高共识清单） ----------
