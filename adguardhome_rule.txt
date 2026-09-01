@@ -84,6 +84,10 @@
 ! ---------- [1] 微软 Windows 传递优化 P2P（Delivery Optimization） ----------
 ! 官方文档确认 *.prod.do.dsp.mp.microsoft.com 为 P2P 云调度端点,配合：组策略/注册表将 DODownloadMode 设为 0 或 99，或禁用 DoSvc 服务，效果更彻底。
 ||*.prod.do.dsp.mp.microsoft.com^
+！微软的 Teredo 服务器，Teredo 是一种 IPv6 过渡技术，网友评价很负面，拦截弊远大于利
+||teredo.ipv6.microsoft.com^
+||win1910.ipv6.microsoft.com^
+||win1910.ipv6.microsoft.com.nsatc.net^
 
 ! ---------- [2] 通用 PCDN / 灰产边缘节点（社区高共识清单） ----------
 ||bsccdn.net^
