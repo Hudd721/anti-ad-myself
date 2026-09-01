@@ -37,6 +37,8 @@
 #江苏致诚云科技，疑似广告投放链路（广告素材/落地页/监测跳转）的 CDN
 ||z1cdn.com^
 ||z9cdn.com^
+#北京微聚未来科技有限公司（Microfun）的官方域,用于广告归因（看广告奖励、渠道转化回传）/跨端登录态/cookie 同步/设备指纹与行为统计上报
+||da-cookie.cliapi.microfun.cn^
 
 ! 数据上报 / 遥测 / 日志类 SDK（隐私优先拦截）
 ||senser.kydcm.cn^
