@@ -57,7 +57,6 @@
 ||browser.events.data.msn.com^
 #厦门营火科技的域名，拦截后通常仅影响该游戏开发商的统计分析，不影响游戏核心玩法
 ||receiver-ta.kampfiregames.cn^
-||sudu.kampfiregames.cn^
 #腾讯小游戏广告（Ads）的数据接入平台
 ||api.datanexus.qq.com^
 #NVIDIA GeForce Experience 的事件/遥测上报端点
