@@ -48,7 +48,11 @@
 ||ad-logs.seeyouyima.com^
 ||pushlog.seeyouyima.com^
 ||zhangyuyidong.cn^
+#微软隐私上报
 ||functional.events.data.microsoft.com^
+||v10.events.data.microsoft.com^
+||self.events.data.microsoft.com^
+||browser.events.data.msn.com^
 #厦门营火科技的域名，拦截后通常仅影响该游戏开发商的统计分析，不影响游戏核心玩法
 ||receiver-ta.kampfiregames.cn^
 ||sudu.kampfiregames.cn^
@@ -60,6 +64,13 @@
 ||iotlog.ruijienetworks.com^
 #360 官方产品配置下发端点，360 安全卫士/浏览器/手机助手等从这里拉取策略、开关、规则版本、弹窗配置，拦截后的误伤有限，能减少一部分配置驱动的弹窗和推送
 ||pconf.f.360.cn^
+#快手日志/上传类子域
+||log-sdk.ksapisrv.com^
+||ulog-sdk.ksapisrv.com^
+||push.ksapisrv.com^
+||uploads1.ksapisrv.com^
+||uploads2.ksapisrv.com^
+||az4-upload.ksapisrv.com^
 
 ! 明确恶意 / 高风险域名
 ||gkybz252.com^
@@ -85,12 +96,12 @@
 ! 说明：本段仅拦截"会让本机上行数据、参与 P2P/PCDN 分发"的域名。
 !       所有"只看视频/直播"的普通 CDN 下行域名（如 queniuyk 等）已在白名单放行。
 ! ---------- [1] 微软 Windows 传递优化 P2P（Delivery Optimization） ----------
-! 官方文档确认 *.prod.do.dsp.mp.microsoft.com 为 P2P 云调度端点,配合：组策略/注册表将 DODownloadMode 设为 0 或 99，或禁用 DoSvc 服务，效果更彻底。
-||*.prod.do.dsp.mp.microsoft.com^
+! 官方文档确认 *.prod.do.dsp.mp.soft.com 为 P2P 云调度端点,配合：组策略/注册表将 DODownloadMode 设为 0 或 99，或禁用 DoSvc 服务，效果更彻底。
+||*.prod.do.dsp.mp.soft.com^
 ！微软的 Teredo 服务器，Teredo 是一种 IPv6 过渡技术，网友评价很负面，拦截弊远大于利
-||teredo.ipv6.microsoft.com^
-||win1910.ipv6.microsoft.com^
-||win1910.ipv6.microsoft.com.nsatc.net^
+||teredo.ipv6.soft.com^
+||win1910.ipv6.soft.com^
+||win1910.ipv6.soft.com.nsatc.net^
 
 ! ---------- [2] 通用 PCDN / 灰产边缘节点（社区高共识清单） ----------
 ||bsccdn.net^
