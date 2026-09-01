@@ -32,6 +32,8 @@
 ||adhub.ly.com^
 ||tk.kexin001.com^
 ||countly.lolli.tech^
+#ICP 备案主体是北京空山信息技术有限公司，用于"广告发布、数据处理服务、互联网数据服务"
+||qrstuvwxyzab.com
 
 ! 数据上报 / 遥测 / 日志类 SDK（隐私优先拦截）
 ||senser.kydcm.cn^
@@ -44,6 +46,11 @@
 ||pushlog.seeyouyima.com^
 ||zhangyuyidong.cn^
 ||functional.events.data.microsoft.com^
+#厦门营火科技的域名，拦截后通常仅影响该游戏开发商的统计分析，不影响游戏核心玩法
+||receiver-ta.kampfiregames.cn^
+||sudu.kampfiregames.cn^
+#腾讯小游戏广告（Ads）的数据接入平台
+||api.datanexus.qq.com^
 
 ! 明确恶意 / 高风险域名
 ||gkybz252.com^
@@ -57,6 +64,8 @@
 
 ! 天翼云 ctydoh.cn（存在争议：元宝判为天翼云官方，豆包判为广告/追踪；多个规则库收录为追踪域名，且非核心 DOH 场景，保留拦截）
 ||ctydoh.cn^
+！腾讯云（wxqcloud）相关域名。专门用于 VoIP（语音/视频通话）和实时互动直播的测试环境域名，日常使用不需要，拦截可抑制后台探测
+||voipfinderliveplaythirdtest.wxqcloud.qq.com
 
 ! 【已核实】基础广告/统计（选配）
 ||static.doubleclick.net^
