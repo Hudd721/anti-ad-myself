@@ -34,6 +34,9 @@
 ||countly.lolli.tech^
 #ICP 备案主体是北京空山信息技术有限公司，用于"广告发布、数据处理服务、互联网数据服务"
 ||qrstuvwxyzab.com
+#江苏致诚云科技，疑似广告投放链路（广告素材/落地页/监测跳转）的 CDN
+||z1cdn.com^
+||z9cdn.com^
 
 ! 数据上报 / 遥测 / 日志类 SDK（隐私优先拦截）
 ||senser.kydcm.cn^
