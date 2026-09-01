@@ -51,6 +51,12 @@
 ||sudu.kampfiregames.cn^
 #腾讯小游戏广告（Ads）的数据接入平台
 ||api.datanexus.qq.com^
+#NVIDIA GeForce Experience 的事件/遥测上报端点
+||gfe.nvidia.com^
+#锐捷网络的设备遥测/日志上报
+||iotlog.ruijienetworks.com^
+#360 官方产品配置下发端点，360 安全卫士/浏览器/手机助手等从这里拉取策略、开关、规则版本、弹窗配置，拦截后的误伤有限，能减少一部分配置驱动的弹窗和推送
+||pconf.f.360.cn^
 
 ! 明确恶意 / 高风险域名
 ||gkybz252.com^
